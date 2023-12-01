@@ -34,5 +34,28 @@ public class MultiplyExpression implements Expression {
         }
     }
 
-   
+    @Override
+    public String toString() {
+        // Use parentheses for clarity and to maintain the correct order of operations
+        return "(" + leftOperand.toString() + " + " + rightOperand.toString() + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        MultiplyExpression that = (MultiplyExpression) obj;
+
+        return leftOperand.equals(that.leftOperand) && rightOperand.equals(that.rightOperand);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = leftOperand.hashCode();
+        result = 31 * result + rightOperand.hashCode();
+        return result;
+    }
+
+    // TODO: Implement more instance methods if needed
 }
