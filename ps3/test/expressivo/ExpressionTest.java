@@ -30,6 +30,8 @@ public class ExpressionTest {
      *          This is shown in the testNestedAddExpressionToString and testComplexExpressionToString methods where expressions are built upon other previously defined expressions, creating a nested structure.
      * */
 
+
+
     @Test(expected=AssertionError.class)
     public void testAssertionsEnabled() {
         assert false; // make sure assertions are enabled with VM argument: -ea
@@ -43,6 +45,7 @@ public class ExpressionTest {
         assertEquals("42.0", constantExpression.toString());
     }
 
+
     @Test
     public void testAddExpressionToString() {
         Expression constant1 = new ConstantExpression(5.0);
@@ -50,6 +53,11 @@ public class ExpressionTest {
         Expression addExpression = new AddExpression(constant1, constant2);
         assertEquals("(5.0 + 7.0)", addExpression.toString());
     }
+
+
+
+
+
 
     @Test
     public void testNestedAddExpressionToString() {
